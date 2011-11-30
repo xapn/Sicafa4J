@@ -27,8 +27,8 @@
       <id>xapn</id>
       <name>Xavier Pigeon</name>
       <url>https://github.com/xapn</url>
-      <organization></organization>
-      <organizationUrl></organizationUrl>
+      <organization>xapn</organization>
+      <organizationUrl>https://github.com/xapn</organizationUrl>
       <timezone>+1</timezone>
     </developer>
   </developers>
@@ -46,5 +46,64 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <easymock.version>3.1</easymock.version>
   </properties>
+  
+  <dependencyManagement>
+    <dependencies>
+      <!-- Testing -->
+      <dependency>
+        <groupId>org.sicafa4j</groupId>
+        <artifactId>testing-dependency</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.10</version>
+      </dependency>
+      <dependency>
+        <groupId>org.easymock</groupId>
+        <artifactId>easymock</artifactId>
+        <version>${easymock.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.easymock</groupId>
+        <artifactId>easymockclassextension</artifactId>
+        <version>${easymock.version}</version>
+      </dependency>
+
+      <!-- Logging -->
+      <dependency>
+        <groupId>org.sicafa4j</groupId>
+        <artifactId>logging-dependency</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.6.4</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+
+      <!-- Spring -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>3.0.6.RELEASE</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <modules>
+    <module>logging-dependency</module>
+    <module>testing-dependency</module>
+    <module>sicafa4j-ehcache</module>
+  </modules>
 </project>
