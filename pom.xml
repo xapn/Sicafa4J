@@ -48,21 +48,62 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <easymock.version>3.1</easymock.version>
   </properties>
-  
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
   <dependencyManagement>
     <dependencies>
-      <!-- Testing -->
+      <!-- Caching Frameworks and API -->
+      <!-- JCache API -->
       <dependency>
-        <groupId>org.sicafa4j</groupId>
-        <artifactId>testing-dependency</artifactId>
-        <version>${project.version}</version>
+        <groupId>javax.cache</groupId>
+        <artifactId>cache-api</artifactId>
+        <version>0.4</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.ehcache</groupId>
+        <artifactId>ehcache</artifactId>
+        <version>2.3.1</version>
         <type>pom</type>
       </dependency>
+
+
+      <!-- Testing Frameworks -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.10</version>
       </dependency>
+      <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.3</version>
+      </dependency>
+      <dependency>
+        <groupId>org.unitils</groupId>
+        <artifactId>unitils</artifactId>
+        <version>2.2</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!-- Mock Object Frameworks -->
       <dependency>
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
@@ -74,13 +115,7 @@
         <version>${easymock.version}</version>
       </dependency>
 
-      <!-- Logging -->
-      <dependency>
-        <groupId>org.sicafa4j</groupId>
-        <artifactId>logging-dependency</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
+      <!-- Logging Frameworks -->
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
@@ -98,12 +133,25 @@
         <artifactId>spring-test</artifactId>
         <version>3.0.6.RELEASE</version>
       </dependency>
+
+      <!-- Built-in dependencies -->
+      <dependency>
+        <groupId>org.sicafa4j</groupId>
+        <artifactId>logging-dependency</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.sicafa4j</groupId>
+        <artifactId>testing-dependency</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
-  
+
   <modules>
     <module>logging-dependency</module>
     <module>testing-dependency</module>
-    <module>sicafa4j-ehcache</module>
   </modules>
 </project>
