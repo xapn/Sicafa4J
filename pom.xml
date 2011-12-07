@@ -34,8 +34,8 @@
   </developers>
 
   <scm>
-    <connection>git://github.com/xapn/Sicafa4J.git</connection>
-    <developerConnection>git@github.com:xapn/Sicafa4J.git</developerConnection>
+    <connection>scm:git:git://github.com/xapn/Sicafa4J.git</connection>
+    <developerConnection>scm:git:git@github.com:xapn/Sicafa4J.git</developerConnection>
     <url>https://xapn@github.com/xapn/Sicafa4J.git</url>
   </scm>
 
@@ -46,6 +46,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>3.0.6.RELEASE</spring.version>
     <easymock.version>3.1</easymock.version>
   </properties>
 
@@ -76,10 +77,14 @@
       <dependency>
         <groupId>net.sf.ehcache</groupId>
         <artifactId>ehcache</artifactId>
-        <version>2.3.1</version>
+        <version>2.5.0</version>
         <type>pom</type>
       </dependency>
-
+      <dependency>
+        <groupId>net.sf.ehcache</groupId>
+        <artifactId>ehcache-jcache</artifactId>
+        <version>1.4.0-beta1</version>
+      </dependency>
 
       <!-- Testing Frameworks -->
       <dependency>
@@ -131,7 +136,7 @@
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
-        <version>3.0.6.RELEASE</version>
+        <version>${spring.version}</version>
       </dependency>
 
       <!-- Built-in dependencies -->
@@ -153,5 +158,6 @@
   <modules>
     <module>logging-dependency</module>
     <module>testing-dependency</module>
+    <module>jcache-ehcache</module>
   </modules>
 </project>

@@ -11,21 +11,17 @@
   </parent>
 
   <groupId>org.sicafa4j</groupId>
-  <artifactId>sicafa4j-ehcache</artifactId>
+  <artifactId>jcache-ehcache</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Sicafa4J-Ehcache</name>
-  <description>Sicafa4J binding with Ehcache</description>
+  <packaging>pom</packaging>
+  <name>Sicafa4J JCache Binding with EhCache</name>
+  <description>JSR107's JCache API Implementation binding with EhCache</description>
 
   <dependencies>
     <!-- Caching Frameworks and API -->
     <dependency>
-      <groupId>javax.cache</groupId>
-      <artifactId>cache-api</artifactId>
-    </dependency>
-    <dependency>
       <groupId>net.sf.ehcache</groupId>
-      <artifactId>ehcache</artifactId>
-      <type>pom</type>
+      <artifactId>ehcache-jcache</artifactId>
     </dependency>
 
     <!-- Built-in dependencies -->
@@ -33,6 +29,7 @@
       <groupId>org.sicafa4j</groupId>
       <artifactId>logging-dependency</artifactId>
       <type>pom</type>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.sicafa4j</groupId>
